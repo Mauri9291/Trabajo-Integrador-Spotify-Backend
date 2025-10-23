@@ -1,7 +1,10 @@
-/**
- * Rutas para géneros
- * Los estudiantes deben implementar todas las rutas relacionadas con géneros
- */
+// src/routes/generos.js
+import express from "express";
+import { generosController } from "../controllers/generosController.js";
 
-const express = require("express");
 const router = express.Router();
+
+router.get("/", generosController.getAll);
+router.post("/", generosController.create);
+
+export default router;

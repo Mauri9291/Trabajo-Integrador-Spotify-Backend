@@ -1,12 +1,11 @@
-/**
- * Punto de entrada del servidor
- * Los estudiantes deben completar la configuración del servidor Express
- */
+// server.js
+import express from "express";
+import { env } from "./src/config/index.js";
+import { db } from "./src/config/database.js";
+import app from "./src/app.js";
 
-const app = require("./src/app");
+const PORT = env.SERVER_PORT || 3000;
 
-const PORT = process.env.PORT || 3000;
-
-// TODO: Configurar el servidor para escuchar en el puerto especificado
-// TODO: Agregar manejo de errores del servidor
-// TODO: Agregar logs de inicio del servidor
+app.listen(PORT, () => {
+  console.log(`[OK] API Spotify corriendo en http://localhost:${PORT}`);
+});

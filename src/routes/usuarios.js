@@ -1,7 +1,13 @@
-/**
- * Rutas para usuarios
- * Los estudiantes deben implementar todas las rutas relacionadas con usuarios
- */
+// src/routes/usuarios.js
+import express from "express";
+import { usuariosController } from "../controllers/usuariosController.js";
 
-const express = require("express");
 const router = express.Router();
+
+router.get("/", usuariosController.listar);
+router.get("/password-vencidas", usuariosController.passwordVencidas);
+router.get("/:id", usuariosController.obtenerPorId);
+router.post("/", usuariosController.crear);
+router.put("/:id", usuariosController.actualizar);
+
+export default router;

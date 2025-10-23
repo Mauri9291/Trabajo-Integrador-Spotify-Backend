@@ -16,7 +16,7 @@ Content-Type: {{json}}
   "fecha_nac": "1995-05-20",
   "sexo": "F",
   "cp": "4600",
-  "id_pais": 10,
+  "id_pais": 1,
   "tipo_usuario_actual": 1
 }
 
@@ -167,8 +167,9 @@ Content-Type: {{json}}
 
 {
   "estado": "eliminada",
-  "fecha_eliminada": "2025-10-02T10:00:00Z"
+  "fecha_eliminada": "2025-10-02 10:00:00"
 }
+
 
 ### ERROR: soft-delete sin fecha
 PUT {{baseUrl}}/playlists/1
@@ -188,11 +189,10 @@ Content-Type: {{json}}
 
 {
   "id_usuario": 1,
-  "id_tipo_usuario": 1,
+  "tipo_usuario": 1,
   "fecha_inicio": "2025-10-01T00:00:00Z",
   "fecha_renovacion": "2025-11-01T00:00:00Z"
 }
-
 ### ERROR: fechas inválidas
 POST {{baseUrl}}/suscripciones
 Content-Type: {{json}}

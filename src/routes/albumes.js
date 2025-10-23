@@ -1,7 +1,12 @@
-/**
- * Rutas para álbumes
- * Los estudiantes deben implementar todas las rutas relacionadas con álbumes
- */
+// src/routes/albumes.js
+import express from "express";
+import { albumesController } from "../controllers/albumesController.js";
 
-const express = require("express");
 const router = express.Router();
+
+router.get("/", albumesController.listar);
+router.get("/:id", albumesController.obtenerPorId);
+router.get("/:id/canciones", albumesController.obtenerCanciones);
+router.post("/", albumesController.crear);
+
+export default router;

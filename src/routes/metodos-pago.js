@@ -1,7 +1,10 @@
-/**
- * Rutas para métodos de pago
- * Los estudiantes deben implementar todas las rutas relacionadas con métodos de pago
- */
+// src/routes/metodos-pago.js
+import express from "express";
+import { metodosPagoController } from "../controllers/metodosPagoController.js";
 
-const express = require("express");
 const router = express.Router();
+
+router.post("/", metodosPagoController.create);
+router.get("/", metodosPagoController.getByUsuario);
+
+export default router;

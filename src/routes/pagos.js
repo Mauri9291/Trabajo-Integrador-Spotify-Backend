@@ -1,7 +1,11 @@
-/**
- * Rutas para pagos
- * Los estudiantes deben implementar todas las rutas relacionadas con pagos
- */
+// src/routes/pagos.js
+import express from "express";
+import { pagosController } from "../controllers/pagosController.js";
 
-const express = require("express");
 const router = express.Router();
+
+router.get("/", pagosController.listar);
+router.get("/:id", pagosController.obtenerPorId);
+router.post("/", pagosController.crear);
+
+export default router;

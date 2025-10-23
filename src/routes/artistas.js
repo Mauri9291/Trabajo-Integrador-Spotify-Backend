@@ -1,7 +1,11 @@
-/**
- * Rutas para artistas
- * Los estudiantes deben implementar todas las rutas relacionadas con artistas
- */
+// src/routes/artistas.js
+import express from "express";
+import { artistasController } from "../controllers/artistasController.js";
 
-const express = require("express");
 const router = express.Router();
+
+router.get("/", artistasController.listar);
+router.get("/:id", artistasController.obtenerPorId);
+router.post("/", artistasController.crear);
+
+export default router;

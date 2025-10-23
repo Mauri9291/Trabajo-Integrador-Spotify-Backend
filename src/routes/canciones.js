@@ -1,7 +1,13 @@
-/**
- * Rutas para canciones
- * Los estudiantes deben implementar todas las rutas relacionadas con canciones
- */
+// src/routes/canciones.js
+import express from "express";
+import { cancionesController } from "../controllers/cancionesController.js";
 
-const express = require("express");
 const router = express.Router();
+
+router.get("/", cancionesController.getAll);
+router.get("/:id", cancionesController.getById);
+router.post("/", cancionesController.create);
+router.post("/:id/generos", cancionesController.addGenero);
+router.delete("/:id/generos/:idGenero", cancionesController.removeGenero);
+
+export default router;
